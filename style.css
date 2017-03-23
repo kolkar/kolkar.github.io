@@ -24,8 +24,7 @@ a{
 }
 
 body{
-	max-width: 1920px;
-	min-width: 1280px;
+	width: 1280px;
 }
 .nav {
 	position: absolute;
@@ -51,6 +50,7 @@ body{
 }
 .home{
 	height: 744px;
+	width: 1280px;
 	background: url("img/BG.png") no-repeat center bottom;
 	background-size: cover;
 	border-bottom: 1px solid #3a333c;
@@ -95,20 +95,21 @@ body{
 	margin-right: 0;
 }
 .second {
+	width: 1024px;
 	height: 492px ;
-	margin: 0 128px;
+	padding: 0 128px;
 	background: #ffffff;
 }
 .text-block{
 	float: left;
 	width: 448px;
-	margin: 113px 0 0 0;
+	margin: 111px 0 0 0;
 }
 .text-block h1 {
 	text-transform: uppercase;
 	font:  bold 18px gothamrounded-bold-webfont, Arial;
 	color: #16a085;
-	letter-spacing: 5px;
+	letter-spacing: 3.5px;
 }
 .text-block p{
 	padding: 38px 0 55px 0;
@@ -116,8 +117,8 @@ body{
 	text-transform: none;
 	font: 12px gothamrounded-book-webfont, Arial;
 	color: #373737;
-	letter-spacing: 4px;
-	line-height: 23px;
+	letter-spacing: 2.4px;
+	line-height: 24px;
 }
 .text-block span{
 
@@ -127,7 +128,7 @@ body{
 }
 .text-block .btn{
 	margin: 0;
-	padding: 19px 37px 15px 35px;
+	padding: 19px 45px 16px 44px;
 }
 .hand {
 	position:absolute;
@@ -136,8 +137,9 @@ body{
 }
 .third {
 	position: absolute;
-	height: 558px ;
-	padding:0 65px 0 124px;
+	height: 558px;
+	width: 1156px;
+	padding:0 0 0 124px;
 	background: #ffffff;
 	background-size: cover;
 }
@@ -146,23 +148,25 @@ body{
 	padding: 145px 0 0 0;
 }
 .text-design {
+	position: relative;
 	float: left;
-	margin: 144px 0 0 328px;
+	margin: 143px 0 0 328px;
 }
 .text-design h1 {
 	text-transform: uppercase;
 	font:  bold 18px gothamrounded-bold-webfont, Arial;
 	color: #16a085;
-	letter-spacing: 5px;
+	letter-spacing: 3.5px;
 }
+
 .text-design p{
-	padding: 34px 0 45px 0;
+	padding: 34px 0 50px 3px;
 	width: 470px;
 	text-transform: none;
 	font: 12px gothamrounded-book-webfont, Arial;
 	color: #373737;
-	letter-spacing: 3px;
-	line-height: 23px;
+	letter-spacing: 2.5px;
+	line-height: 22px;
 }
 .text-design span{
 
@@ -171,6 +175,7 @@ body{
 	color: #373737;
 }
 .text-design .btn{
+	border-radius: 0;
 	margin: 0 0 0 -70px;
 	padding: 19px 47px 15px 45px;
 }
@@ -189,6 +194,7 @@ body{
 }
 .fourth {
 	position: absolute;
+	width: 1047px;
 	height: 484px ;
 	margin: 558px 0 0 0;
 	padding:0 106px 0 127px ;
@@ -216,11 +222,11 @@ body{
 	text-transform: none;
 	font: 10px gothamrounded-medium-webfont, Arial;
 	color: #373737;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	line-height: 12px;
 }
 .slider{
-	float: right;
+	float: left;
 	padding: 100px 0 0 94px;
 }
 .slider img {
@@ -239,7 +245,8 @@ body{
 
 }
 .fifthy {
-	height: 790px ;
+	height: 790px;
+	width: 1280px;
 	background: url("img/fifthy-bg.png") no-repeat center bottom;
 	background-size: cover;
 	margin: 1042px 0 0 0;
@@ -276,10 +283,11 @@ body{
 }
 .seventh {
 	height: 395px;
+	width: 1280px;
 	background: #f5f6f7;
 }
 .seventh h1 {
-	padding: 90px 548px 0 548px;
+	padding: 89px 548px 0 548px;
 	width: 190px;
 	text-transform: uppercase;
 	font:  bold 20px gothamrounded-bold-webfont, Arial;
@@ -336,6 +344,7 @@ body{
 .footer {
 	padding: 0 129px 40px 129px;
 	height: 131px;
+	width: 1022px;
 	background: #ffffff;
 }
 .footer-img {
