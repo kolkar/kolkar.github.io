@@ -4,17 +4,27 @@
 }
 
 @font-face{
-	font-family: gothamrounded-bold-webfont;
-	src:url(fonts/bold/gothamrounded-bold-webfont.ttf);
-	font-family: gothamrounded-book-webfont;
+	font-family: Gothramrounded Bk;
 	src:url(fonts/book/gothamrounded-book-webfont.ttf);
-	font-family: gothamrounded-light-webfont;
-	src:url(fonts/light/gothamrounded-light-webfont.ttf);
-	font-family: gothamrounded-medium-webfont;
-	src:url(fonts/medium/gothamrounded-medium-webfont.ttf);
-	font-family: gothamrounded-mediumitalic-webfont;
-	src:url(fonts/mediumitalic/gothamrounded-mediumitalic-webfont.ttf);
 
+
+}
+@font-face{
+	font-family: Gothramrounded B;
+	src:url(fonts/bold/gothamrounded-bold-webfont.ttf);
+
+}
+@font-face{
+	font-family: Gothramrounded Lt;
+	src:url(fonts/light/gothamrounded-light-webfont.ttf);
+}
+@font-face{
+	font-family: Gothramrounded M;
+	src:url(fonts/medium/gothamrounded-medium-webfont.ttf);
+}
+@font-face{
+	font-family: Gothramrounded MI;
+	src:url(fonts/mediumitalic/gothamrounded-mediumitalic-webfont.ttf);
 }
 ul {
 	list-style: none;
@@ -27,8 +37,7 @@ body{
 	width: 1280px;
 }
 .nav {
-	position: absolute;
-	margin: 74px 250px 0 272px;
+	padding: 68px 250px 0 272px;
 
 }
 .nav li {
@@ -43,9 +52,9 @@ body{
 }
 .nav a {
 	text-transform: uppercase;
-	font:  bold 16px gothamrounded-bold-webfont, Arial;
+	font: 16px Gothramrounded B;
 	color: #ffffff;
-	letter-spacing: 5px;
+	letter-spacing: 3px;
 
 }
 .home{
@@ -56,36 +65,35 @@ body{
 	border-bottom: 1px solid #3a333c;
 }
 .get_started{
-	position: absolute;
-	margin: 335px 400px 100px 391px;
+	padding: 260px 400px 100px 391px;
 }
 .get_started h1 {
+	width: 510px;
 	text-transform: uppercase;
-	font:  bold 36px gothamrounded-bold-webfont, Arial;
+	font: 36px Gothramrounded B;
 	color: #ffffff;
-	letter-spacing: 6px;
+	letter-spacing: 5.5px;
 }
 .get_started p{
-	padding: 8px 0 40px 84px;
+	padding: 3px 0 42px 84px;
 	text-transform: lowercase;
-	font: 16px gothamrounded-medium-webfont, Arial;
+	font: 16px Gothramrounded M;
 	color: #ffffff;
-	letter-spacing: 4px;
+	letter-spacing: 2.5px;
 }
 
 .btn {
-	margin: 0 165px;
+	margin: 0 0 0 165px;
 	background: url(img/btn-getstarted.png) repeat-x 0 0;
-	font: bold 12px gothamrounded-bold-webfont, Arial;
+	font: 12px Gothramrounded B;
 	color: #ffffff;
 	text-transform: uppercase;
-	padding: 17px 28px 17px 28px;
+	padding: 17px 30px 15px 28px;
 	border-radius: 3px;
 	letter-spacing: 2px;
 }
 .sprites {
-	position: relative;
-	padding: 700px 590px 20px 590px;
+	padding: 136px 0 0 590px;
 }
 .sprites li {
 	float: left;
@@ -103,40 +111,45 @@ body{
 .text-block{
 	float: left;
 	width: 448px;
-	margin: 111px 0 0 0;
+	margin: 109px -67px 0 0;
 }
 .text-block h1 {
 	text-transform: uppercase;
-	font:  bold 18px gothamrounded-bold-webfont, Arial;
+	font:  18px Gothramrounded B;
 	color: #16a085;
-	letter-spacing: 3.5px;
+	line-height: 21px;
+	letter-spacing: 2.8px;
 }
 .text-block p{
-	padding: 38px 0 55px 0;
+	padding: 39px 0 58px 0;
 	width: 530px;
 	text-transform: none;
-	font: 12px gothamrounded-book-webfont, Arial;
+	font: 12px Gothramrounded Bk;
 	color: #373737;
-	letter-spacing: 2.4px;
+	letter-spacing: 1.85px;
 	line-height: 24px;
 }
 .text-block span{
 
 	text-transform: none;
-	font: bold 12px gothamrounded-bold-webfont, Arial;
+	font: 12px Gothramrounded B;
 	color: #373737;
 }
 .text-block .btn{
 	margin: 0;
-	padding: 19px 45px 16px 44px;
+	padding: 19px 42px 13px 44px;
 }
 .hand {
-	position:absolute;
-	top:834px;
-	left:510px;
+	float:left;
+	position:relative;
+	width: 576px;
+
+}
+.hand img {
+	padding: 90px 0 0 0;
+	position: relative;
 }
 .third {
-	position: absolute;
 	height: 558px;
 	width: 1156px;
 	padding:0 0 0 124px;
@@ -154,7 +167,7 @@ body{
 }
 .text-design h1 {
 	text-transform: uppercase;
-	font:  bold 18px gothamrounded-bold-webfont, Arial;
+	font: 18px Gothramrounded B;
 	color: #16a085;
 	letter-spacing: 3.5px;
 }
@@ -163,7 +176,7 @@ body{
 	padding: 34px 0 50px 3px;
 	width: 470px;
 	text-transform: none;
-	font: 12px gothamrounded-book-webfont, Arial;
+	font: 12px Gothramrounded Bk;
 	color: #373737;
 	letter-spacing: 2.5px;
 	line-height: 22px;
@@ -171,7 +184,7 @@ body{
 .text-design span{
 
 	text-transform: none;
-	font: bold 12px gothamrounded-bold-webfont, Arial;
+	font: 12px Gothramrounded B;
 	color: #373737;
 }
 .text-design .btn{
@@ -188,7 +201,7 @@ body{
 	padding: 7px 21px 0 0;
 }
 .slide span{
-	font: bold 12px gothamrounded-bold-webfont, Arial;
+	font: 12px Gothramrounded B;
 	color: #373737;
 	letter-spacing: 2px;
 }
@@ -211,7 +224,7 @@ body{
 }
 .community h1 {
 	text-transform: uppercase;
-	font:  bold 16px gothamrounded-bold-webfont, Arial;
+	font:  16px Gothramrounded B;
 	color: #373737;
 	letter-spacing: 3px;
 	width: 180px;
@@ -220,7 +233,7 @@ body{
 	float: none;
 	padding: 20px 0 0 20px;
 	text-transform: none;
-	font: 10px gothamrounded-medium-webfont, Arial;
+	font: 10px Gothramrounded M;
 	color: #373737;
 	letter-spacing: 2px;
 	line-height: 12px;
@@ -254,7 +267,7 @@ body{
 .fifthy h1 {
 	padding: 348px 400px 0 403px;
 	text-transform: uppercase;
-	font:  bold 24px gothamrounded-bold-webfont, Arial;
+	font:  24px Gothramrounded B;
 	color: #ffffff;
 	letter-spacing: 4px;
 }
@@ -267,7 +280,7 @@ body{
 	width: 245px;
 	height: 12px;
 	padding: 24px 13px 23px 22px;
-	font: bold 16px gothamrounded-medium-webfont, Arial;
+	font: 16px Gothramrounded B;
 	text-transform: uppercase;
 	color: #373737;
 	letter-spacing: 4px;
@@ -290,7 +303,7 @@ body{
 	padding: 89px 548px 0 548px;
 	width: 190px;
 	text-transform: uppercase;
-	font:  bold 20px gothamrounded-bold-webfont, Arial;
+	font:  20px Gothramrounded B;
 	color: #373737;
 	letter-spacing: 4px;
 }
@@ -299,7 +312,7 @@ body{
 	width: 840px;
 	padding: 2px 219px 0 220px;
 	text-transform: uppercase;
-	font: bold 12px gothamrounded-medium-webfont, Arial;
+	font: 12px Gothramrounded B;
 	color: #373737;
 	letter-spacing: 2.1px;
 	line-height: 25px;
@@ -318,7 +331,7 @@ body{
 .apple {
 	float: left;
 	background: url(img/a.png) repeat-x 0 0;
-	font: bold 16px gothamrounded-bold-webfont, Arial;
+	font: 16px Gothramrounded B;
 	color: #ffffff;
 	text-transform: uppercase;
 	padding: 20px 103px 11px 28px;
@@ -334,7 +347,7 @@ body{
 .android {
 	float: left;
 	background: url(img/a.png) repeat-x 0 0;
-	font: bold 16px gothamrounded-bold-webfont, Arial;
+	font: 16px Gothramrounded B;
 	color: #ffffff;
 	text-transform: uppercase;
 	padding: 20px 75px 11px 28px;
@@ -355,7 +368,7 @@ body{
 	float: left;
 	margin-top: 45px;
 	margin-right: 16px;
-	font: bold 14px gothamrounded-bold-webfont, Arial;
+	font: 14px Gothramrounded B;
 	color: #373737;
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -366,7 +379,7 @@ body{
 .footer p {
 	float: left;
 	margin-top: 24px;
-	font: bold 14px gothamrounded-bold-webfont, Arial;
+	font: 14px Gothramrounded B;
 	color: #373737;
 	text-transform: none;
 	letter-spacing: 2px;
