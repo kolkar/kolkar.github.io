@@ -34,6 +34,7 @@ a{
 }
 
 body{
+	margin: auto;
 	width: 1280px;
 }
 .nav {
@@ -72,14 +73,14 @@ body{
 	text-transform: uppercase;
 	font: 36px Gothramrounded B;
 	color: #ffffff;
-	letter-spacing: 5.5px;
+	letter-spacing: 5.69px;
 }
 .get_started p{
 	padding: 3px 0 42px 84px;
 	text-transform: lowercase;
 	font: 16px Gothramrounded M;
 	color: #ffffff;
-	letter-spacing: 2.5px;
+	letter-spacing: 2.59px;
 }
 
 .btn {
@@ -158,27 +159,27 @@ body{
 }
 .phone {
 	float: left;
-	padding: 145px 0 0 0;
+	padding: 142px 0 0 0;
 }
 .text-design {
 	position: relative;
 	float: left;
-	margin: 143px 0 0 328px;
+	margin: 136px 0 0 328px;
 }
 .text-design h1 {
 	text-transform: uppercase;
 	font: 18px Gothramrounded B;
 	color: #16a085;
-	letter-spacing: 3.5px;
+	letter-spacing: 2.7px;
 }
 
 .text-design p{
-	padding: 34px 0 50px 3px;
+	padding: 33px 0 53px 3px;
 	width: 470px;
 	text-transform: none;
 	font: 12px Gothramrounded Bk;
 	color: #373737;
-	letter-spacing: 2.5px;
+	letter-spacing: 1.8px;
 	line-height: 22px;
 }
 .text-design span{
@@ -189,7 +190,7 @@ body{
 }
 .text-design .btn{
 	border-radius: 0;
-	margin: 0 0 0 -70px;
+	margin: 0 0 0 -67px;
 	padding: 19px 47px 15px 45px;
 }
 .slide {
@@ -206,17 +207,17 @@ body{
 	letter-spacing: 2px;
 }
 .fourth {
-	position: absolute;
 	width: 1047px;
 	height: 484px ;
-	margin: 558px 0 0 0;
 	padding:0 106px 0 127px ;
 	background: #f5f6f7;
 	background-size: cover;
 }
 .community{
+	position: relative;
 	float: left;
-	width: 165px;
+	width: 180px;
+	margin: 0 -311px;
 	padding: 165px 0 0 0;
 }
 .community img{
@@ -226,8 +227,9 @@ body{
 	text-transform: uppercase;
 	font:  16px Gothramrounded B;
 	color: #373737;
-	letter-spacing: 3px;
+	letter-spacing: 2.49px;
 	width: 180px;
+	margin: -5.11px 0 -1.2px 2px;
 }
 .community p {
 	float: none;
@@ -235,12 +237,12 @@ body{
 	text-transform: none;
 	font: 10px Gothramrounded M;
 	color: #373737;
-	letter-spacing: 2px;
+	letter-spacing: 1.49px;
 	line-height: 12px;
 }
 .slider{
 	float: left;
-	padding: 100px 0 0 94px;
+	padding: 100px 0 0 254px;
 }
 .slider img {
 	float: left;
@@ -262,14 +264,13 @@ body{
 	width: 1280px;
 	background: url("img/fifthy-bg.png") no-repeat center bottom;
 	background-size: cover;
-	margin: 1042px 0 0 0;
 }
 .fifthy h1 {
-	padding: 348px 400px 0 403px;
+	padding: 340px 398px 0 403px;
 	text-transform: uppercase;
 	font:  24px Gothramrounded B;
 	color: #ffffff;
-	letter-spacing: 4px;
+	letter-spacing: 3.67px;
 }
 .input{
 	margin-left: 466px;
@@ -283,7 +284,7 @@ body{
 	font: 16px Gothramrounded B;
 	text-transform: uppercase;
 	color: #373737;
-	letter-spacing: 4px;
+	letter-spacing: 2.49px;
 	border: none;
 	background: #F6F6f6;
 	border-radius: 3px 0 0 3px;
@@ -300,32 +301,32 @@ body{
 	background: #f5f6f7;
 }
 .seventh h1 {
-	padding: 89px 548px 0 548px;
+	padding: 80px 548px 0 547px;
 	width: 190px;
 	text-transform: uppercase;
 	font:  20px Gothramrounded B;
 	color: #373737;
-	letter-spacing: 4px;
+	letter-spacing: 3px;
 }
 .seventh p {
 	float: none;
-	width: 840px;
-	padding: 2px 219px 0 220px;
+	width: 850px;
+	padding: 4px 219px 0 219px;
 	text-transform: uppercase;
 	font: 12px Gothramrounded B;
 	color: #373737;
-	letter-spacing: 2.1px;
-	line-height: 25px;
+	letter-spacing: 1.86px;
+	line-height: 23.9px;
 }
 .seventh span {
 	margin-left: 200px;
 }
 .appstore {
-	margin-top: 35px;
+	margin-top: 39px;
 	padding-left: 330px;
 }
 .playmarket {
-	margin-top: 35px;
+	margin-top: 39px;
 	padding-left: 651px;
 }
 .apple {
@@ -334,13 +335,13 @@ body{
 	font: 16px Gothramrounded B;
 	color: #ffffff;
 	text-transform: uppercase;
-	padding: 20px 103px 11px 28px;
+	padding: 19px 103px 8px 25px;
 	border-radius: 3px 0 0 3px;
-	letter-spacing: 2px;
+	letter-spacing: 1.86px;
 }
 .seventh img {
 	float: left;
-	padding: 12px 16px 13px 20px;
+	padding: 14px 16px 13px 18px;
 	background: url(img/btn-getstarted.png) repeat-x 0 0;
 	border-radius: 0 3px 3px 0;
 }
@@ -350,9 +351,9 @@ body{
 	font: 16px Gothramrounded B;
 	color: #ffffff;
 	text-transform: uppercase;
-	padding: 20px 75px 11px 28px;
+	padding: 19px 75px 8px 25px;
 	border-radius: 3px 0 0 3px;
-	letter-spacing: 2px;
+	letter-spacing: 1.86px;
 }
 .footer {
 	padding: 0 129px 40px 129px;
@@ -371,7 +372,7 @@ body{
 	font: 14px Gothramrounded B;
 	color: #373737;
 	text-transform: uppercase;
-	letter-spacing: 3px;
+	letter-spacing: 1.86px;
 }
 .footer li:last-child{
 	margin-right: 0;
@@ -382,7 +383,7 @@ body{
 	font: 14px Gothramrounded B;
 	color: #373737;
 	text-transform: none;
-	letter-spacing: 2px;
+	letter-spacing: 1.49px;
 }
 .ul {
 	float: left;
