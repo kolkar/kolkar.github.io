@@ -1,390 +1,71 @@
-*{
-	margin: 0;
+html, body {
 	padding: 0;
+	margin: 0;
+	height: 100%;
 }
-
-@font-face{
-	font-family: Gothramrounded Bk;
-	src:url(fonts/book/gothamrounded-book-webfont.ttf);
-
-
+canvas {
+	padding: 0;
+	margin: 0;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
 }
-@font-face{
-	font-family: Gothramrounded B;
-	src:url(fonts/bold/gothamrounded-bold-webfont.ttf);
-
+.page {
+	background-color: #19B5FE;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+h3 {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 60px;
+	color: #B93C3F;
+	left: 50%;
+	top: 50%;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	z-index: 2;
 }
-@font-face{
-	font-family: Gothramrounded Lt;
-	src:url(fonts/light/gothamrounded-light-webfont.ttf);
-}
-@font-face{
-	font-family: Gothramrounded M;
-	src:url(fonts/medium/gothamrounded-medium-webfont.ttf);
-}
-@font-face{
-	font-family: Gothramrounded MI;
-	src:url(fonts/mediumitalic/gothamrounded-mediumitalic-webfont.ttf);
-}
-ul {
+li{
+	color: white;
 	list-style: none;
 }
-a{
-	text-decoration: none;
+span{
+	color: white;
 }
 
-body{
+}
+.s_about__countdown{
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+}
+.s_about__list{
+	display: flex;
+	justify-content: space-between;
+	max-width: 500px;
+	width: 100%;
 	margin: auto;
-	width: 1280px;
+li{
+	font-size: 24px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
-.nav {
-	padding: 68px 250px 0 272px;
-
+span{
+	font-size: 72px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
-.nav li {
-	float: left;
-	margin-right: 70px;
+p{
+	position: absolute;
+	top: 20%;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	font-size: 40px;
+	color: white;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
-.nav li:last-child{
-	margin-right: 0;
-}
-.nav li img {
-	margin-top: -33px;
-}
-.nav a {
-	text-transform: uppercase;
-	font: 16px Gothramrounded B;
-	color: #ffffff;
-	letter-spacing: 3px;
-
-}
-.home{
-	height: 744px;
-	width: 1280px;
-	background: url("img/BG.png") no-repeat center bottom;
-	background-size: cover;
-	border-bottom: 1px solid #3a333c;
-}
-.get_started{
-	padding: 260px 400px 100px 391px;
-}
-.get_started h1 {
-	width: 510px;
-	text-transform: uppercase;
-	font: 36px Gothramrounded B;
-	color: #ffffff;
-	letter-spacing: 5.69px;
-}
-.get_started p{
-	padding: 3px 0 42px 84px;
-	text-transform: lowercase;
-	font: 16px Gothramrounded M;
-	color: #ffffff;
-	letter-spacing: 2.59px;
-}
-
-.btn {
-	margin: 0 0 0 165px;
-	background: url(img/btn-getstarted.png) repeat-x 0 0;
-	font: 12px Gothramrounded B;
-	color: #ffffff;
-	text-transform: uppercase;
-	padding: 17px 30px 15px 28px;
-	border-radius: 3px;
-	letter-spacing: 2px;
-}
-.sprites {
-	padding: 136px 0 0 590px;
-}
-.sprites li {
-	float: left;
-	margin-right: 16px;
-}
-.sprites li:last-child{
-	margin-right: 0;
-}
-.second {
-	width: 1024px;
-	height: 492px ;
-	padding: 0 128px;
-	background: #ffffff;
-}
-.text-block{
-	float: left;
-	width: 448px;
-	margin: 109px -67px 0 0;
-}
-.text-block h1 {
-	text-transform: uppercase;
-	font:  18px Gothramrounded B;
-	color: #16a085;
-	line-height: 21px;
-	letter-spacing: 2.8px;
-}
-.text-block p{
-	padding: 39px 0 58px 0;
-	width: 530px;
-	text-transform: none;
-	font: 12px Gothramrounded Bk;
-	color: #373737;
-	letter-spacing: 1.85px;
-	line-height: 24px;
-}
-.text-block span{
-
-	text-transform: none;
-	font: 12px Gothramrounded B;
-	color: #373737;
-}
-.text-block .btn{
-	margin: 0;
-	padding: 19px 42px 13px 44px;
-}
-.hand {
-	float:left;
-	position:relative;
-	width: 576px;
-
-}
-.hand img {
-	padding: 90px 0 0 0;
-	position: relative;
-}
-.third {
-	height: 558px;
-	width: 1156px;
-	padding:0 0 0 124px;
-	background: #ffffff;
-	background-size: cover;
-}
-.phone {
-	float: left;
-	padding: 142px 0 0 0;
-}
-.text-design {
-	position: relative;
-	float: left;
-	margin: 136px 0 0 328px;
-}
-.text-design h1 {
-	text-transform: uppercase;
-	font: 18px Gothramrounded B;
-	color: #16a085;
-	letter-spacing: 2.7px;
-}
-
-.text-design p{
-	padding: 33px 0 53px 3px;
-	width: 470px;
-	text-transform: none;
-	font: 12px Gothramrounded Bk;
-	color: #373737;
-	letter-spacing: 1.8px;
-	line-height: 22px;
-}
-.text-design span{
-
-	text-transform: none;
-	font: 12px Gothramrounded B;
-	color: #373737;
-}
-.text-design .btn{
-	border-radius: 0;
-	margin: 0 0 0 -67px;
-	padding: 19px 47px 15px 45px;
-}
-.slide {
-	position: relative;
-	margin: 57px 0 0 0;
-	float: left;
-}
-.slide img{
-	padding: 7px 21px 0 0;
-}
-.slide span{
-	font: 12px Gothramrounded B;
-	color: #373737;
-	letter-spacing: 2px;
-}
-.fourth {
-	width: 1047px;
-	height: 484px ;
-	padding:0 106px 0 127px ;
-	background: #f5f6f7;
-	background-size: cover;
-}
-.community{
-	position: relative;
-	float: left;
-	width: 180px;
-	margin: 0 -311px;
-	padding: 165px 0 0 0;
-}
-.community img{
-	padding: 0 60px 26px 60px;
-}
-.community h1 {
-	text-transform: uppercase;
-	font:  16px Gothramrounded B;
-	color: #373737;
-	letter-spacing: 2.49px;
-	width: 180px;
-	margin: -5.11px 0 -1.2px 2px;
-}
-.community p {
-	float: none;
-	padding: 20px 0 0 20px;
-	text-transform: none;
-	font: 10px Gothramrounded M;
-	color: #373737;
-	letter-spacing: 1.49px;
-	line-height: 12px;
-}
-.slider{
-	float: left;
-	padding: 100px 0 0 254px;
-}
-.slider img {
-	float: left;
-	margin-right: 24px;
-}
-.slider img:last-child {
-	margin-right: 0;
-}
-.slide-1 {
-	margin: 0 0 0 720px;
-}
-.slide-1 img {
-	margin:-10px 0 10px 0;
-	padding: 7px 21px 0 0;
-
-}
-.fifthy {
-	height: 790px;
-	width: 1280px;
-	background: url("img/fifthy-bg.png") no-repeat center bottom;
-	background-size: cover;
-}
-.fifthy h1 {
-	padding: 340px 398px 0 403px;
-	text-transform: uppercase;
-	font:  24px Gothramrounded B;
-	color: #ffffff;
-	letter-spacing: 3.67px;
-}
-.input{
-	margin-left: 466px;
-	margin-top: 28px;
-}
-.fifthy input {
-	float: left;
-	width: 245px;
-	height: 12px;
-	padding: 24px 13px 23px 22px;
-	font: 16px Gothramrounded B;
-	text-transform: uppercase;
-	color: #373737;
-	letter-spacing: 2.49px;
-	border: none;
-	background: #F6F6f6;
-	border-radius: 3px 0 0 3px;
-}
-.input img {
-	float: left;
-	padding: 23px 20px 20px 20px;
-	background: url(img/input.png) repeat-x 0 0;
-	border-radius: 0 3px 3px 0;
-}
-.seventh {
-	height: 395px;
-	width: 1280px;
-	background: #f5f6f7;
-}
-.seventh h1 {
-	padding: 80px 548px 0 547px;
-	width: 190px;
-	text-transform: uppercase;
-	font:  20px Gothramrounded B;
-	color: #373737;
-	letter-spacing: 3px;
-}
-.seventh p {
-	float: none;
-	width: 850px;
-	padding: 4px 219px 0 219px;
-	text-transform: uppercase;
-	font: 12px Gothramrounded B;
-	color: #373737;
-	letter-spacing: 1.86px;
-	line-height: 23.9px;
-}
-.seventh span {
-	margin-left: 200px;
-}
-.appstore {
-	margin-top: 39px;
-	padding-left: 330px;
-}
-.playmarket {
-	margin-top: 39px;
-	padding-left: 651px;
-}
-.apple {
-	float: left;
-	background: url(img/a.png) repeat-x 0 0;
-	font: 16px Gothramrounded B;
-	color: #ffffff;
-	text-transform: uppercase;
-	padding: 14px 103px 13px 25px;
-	border-radius: 3px 0 0 3px;
-	letter-spacing: 1.86px;
-}
-.seventh img {
-	float: left;
-	padding: 14px 16px 13px 18px;
-	background: url(img/btn-getstarted.png) repeat-x 0 0;
-	border-radius: 0 3px 3px 0;
-}
-.android {
-	float: left;
-	background: url(img/a.png) repeat-x 0 0;
-	font: 16px Gothramrounded B;
-	color: #ffffff;
-	text-transform: uppercase;
-	padding: 14px 75px 13px 25px;
-	border-radius: 3px 0 0 3px;
-	letter-spacing: 1.86px;
-}
-.footer {
-	padding: 0 129px 40px 129px;
-	height: 131px;
-	width: 1022px;
-	background: #ffffff;
-}
-.footer-img {
-	margin-top: 25px;
-	float: right;
-}
-.footer li {
-	float: left;
-	margin-top: 45px;
-	margin-right: 16px;
-	font: 14px Gothramrounded B;
-	color: #373737;
-	text-transform: uppercase;
-	letter-spacing: 1.86px;
-}
-.footer li:last-child{
-	margin-right: 0;
-}
-.footer p {
-	float: left;
-	margin-top: 24px;
-	font: 14px Gothramrounded B;
-	color: #373737;
-	text-transform: none;
-	letter-spacing: 1.49px;
-}
-.ul {
-	float: left;
 }

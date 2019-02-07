@@ -2,113 +2,28 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Home page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-
+    <meta charset="utf-8">
+    <title>Home page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
 <div class="wrapper">
-	<div class="home">
-		<div class="nav">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Photoapp</a></li>
-				<li><img src="img/logo.png"></li>
-				<li><a href="#">Design</a></li>
-				<li><a href="#">Download</a></li>
-			</ul>
-		</div>
-		<div class="get_started">
-			<h1>your life , a  photo</h1>
-			<p>print your life in a simple photo</p>
-			<a href="#" class="btn">Get started</a>
-		</div>
-		<div class="sprites">
-			<ul>
-				<li><a href="#" class="twit"><img src="img/twit.png"></a></li>
-				<li><a href="#" class="fl"><img src="img/fl.png"></a></li>
-				<li><a href="#" class="drb"><img src="img/drb.png"></a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="second">
-		<div class="text-block">
-			<h1>Rappresent your life with a simple photo</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-				sed do eiusmod tempor incididunt ut labore et dolore<br>
-				magna aliqua. Ut <span>enim ad minim</span> veniam, quis <br>
-				nostrud exercitation ullamco laboris nisi<br>
-				ut aliquip ex ea commodo consequat.</p>
-			<a href="#" class="btn">Get started</a>
-		</div>
-		<div class="hand">
-			<img src="img/hand.png">
-		</div>
-	</div>
-	<div class="third">
-		<div class="phone">
-			<img src="img/phone.png">
-		</div>
-		<div class="text-design">
-			<h1>Design</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-				sed do eiusmod tempor incididunt ut labore et dolore<br>
-				magna aliqua. Ut <span>enim ad minim</span> veniam, quis <br>
-				nostrud exercitation ullamco laboris nisi<br>
-				ut aliquip ex ea commodo consequat.</p>
-			<a href="#" class="btn">Learn more</a>
-			<div class="slide">
-				<span>01/05</span><br>
-				<img src="img/arrow-left.png">
-				<img src="img/arrow-right.png">
-			</div>
-		</div>
+    <div class="page">
 
-
-	</div>
-	<div class="fourth">
-		<div class="community">
-			<img src="img/fourth-logo.png">
-			<h1>Our community</h1>
-			<p>Lorem ipsum dolor sit<br>
-				&nbsp  amet, consectetur<br>
-				&nbsp &nbsp adipiscing elit,</p>
-		</div>
-		<div class="slider">
-			<div class="slide-1">
-				<img src="img/arrow-left.png">
-				<img src="img/arrow-right.png">
-			</div>
-			<img src="img/fourth-img.png">
-			<img src="img/fourth-img-1.png">
-		</div>
-	</div>
-	<div class="fifthy">
-		<h1>Subscribe to us community</h1>
-		<div class="input"><input type="text" placeholder="your email"><img src="img/check.png"></div>
-	</div>
-	<div class="seventh">
-		<h1>Download it</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut<br>
-			&nbsplabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br>
-			<span>laboris nisi ut aliquip ex ea commodo consequat.</span></p>
-		<div class="appstore"><a href="#" class="apple">App store</a><img src="img/apple.png"></div>
-		<div class="playmarket"><a href="#" class="android">Play market</a><img src="img/android.png"></div>
-	</div>
-	<div class="footer">
-		<div class="ul">
-			<ul>
-				<li>Credits <img src="img/footer-ul.png"></li>
-				<li>Privacy <img src="img/footer-ul.png"></li>
-				<li>Our teams</li>
-			</ul>
-			<p>Copyright by phototime - all right reserved</p>
-		</div>
-		<img src="img/footer-logo.png" class="footer-img"><br>
-
-	</div>
+        <div class="s_about__countdown js-countdown" data-date="Feb 10, 2019 18:00:00">
+            <ul class="s_about__list fw">
+                <p>до Буковеля залишилось</p>
+                <li><span id="days"></span><br>Дней</li>
+                <li><span id="hours"></span><br>Часов</li>
+                <li><span id="minutes"></span><br>Минут</li>
+                <li><span id="seconds"></span><br>Секунд</li>
+            </ul>
+        </div>
+        <canvas class="snow1"></canvas>
+        <canvas class="snow2"></canvas>
+    </div>
 
 </div>
 
