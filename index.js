@@ -8,7 +8,12 @@ function degToCompass(deg) {
 }
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${apiKey}`)
-    .then(dataWrappedByPromise => dataWrappedByPromise.json())
+    .then(response => {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response.json()
+    })
     .then(data => {
         let widget = document.createElement('div');
         widget.innerHTML = `
@@ -35,6 +40,13 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${apiKe
         draw(document, widget);
         document.getElementById('canvas').style.display = 'block';
         spinner.style.display = 'none';
+    })
+    .catch((error) => {
+        spinner.style.display = 'none';
+        let p = document.createElement('p');
+        p.innerHTML = error + ' - please enter your apiKey';
+        document.querySelector('body').appendChild(p);
+
     });
 
 function draw(d, widget) {
