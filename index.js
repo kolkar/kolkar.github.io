@@ -66,12 +66,12 @@ function draw(d, widget) {
         "</div>" +
         "</foreignObject>" +
         "</svg>";
-    const DOMURL = self.URL || self.webkitURL || self;
+
     let img = new Image();
     let svg = new Blob([data], {type: "image/svg+xml;charset=utf-8"});
-    const url = DOMURL.createObjectURL(svg);
+    const url = URL.createObjectURL(svg);
     img.addEventListener("load", function () {
-        DOMURL.revokeObjectURL(url);
+        URL.revokeObjectURL(url);
         ctx.drawImage(img, 0, 0);
         dom.remove();
     }, false);
