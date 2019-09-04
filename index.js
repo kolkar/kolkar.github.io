@@ -1,193 +1,69 @@
-const second = 1000,
-    minute = second * 60,
-    hour = minute * 60,
-    day = hour * 24;
-// console.log($('.js-countdown').data('date'));
-var str = $('.js-countdown').data('date');
-// str = str +'Z';
-// console.log(Date.parse(str));
+const apiKey = 'your_api_key';
+let spinner = document.getElementsByClassName('loading')[0];
 
-let countDown = new Date(str).getTime(),
-    x = setInterval(function () {
+function degToCompass(deg) {
+    let val = Math.floor((deg / 22.5) + 0.5);
+    const cardinal = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+    return cardinal.filter((item, i) => i === val).join();
+}
 
-        let now = new Date().getTime(),
-            distance = countDown - now;
-
-        document.getElementById('days').innerText = Math.floor(distance / (day)),
-            document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-            document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-            document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
-
-        //do something later when date is reached
-        //if (distance < 0) {
-        //  clearInterval(x);
-        //  'IT'S MY BIRTHDAY!;
-        //}
-
-    }, second)
-
-$(document).ready(function () {
-    $(".snow1").let_it_snow({
-        speed: 0,
-        interaction: true,
-        size: 2,
-        count: 200,
-        opacity: 0,
-        color: "#ffffff",
-        windPower: 1,
-        image: false
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${apiKey}`)
+    .then(dataWrappedByPromise => dataWrappedByPromise.json())
+    .then(data => {
+        let widget = document.createElement('div');
+        widget.innerHTML = `
+                    <div class="widget" id="widget" style="background: #31495d;width: 350px;min-height: 200px;color: #fff;padding: 15px;font-family: 'Montserrat', sans-serif;">
+                        <div class="item__title">
+                            <h2 style="font-size: 2em;margin: 0;">` + data.name + `</h2>
+                        </div>
+                        <div class="item__content" style="display: flex;justify-content: space-between;">
+                            <div class="item__left" style="max-width: 49%;width: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                                <h3 style="font-size: 38px; font-weight: 100">` + (+data.main.temp - 273).toFixed(0) + ` ℃</h3>
+                                <p>` + degToCompass(data.wind.deg) + ` ` + (data.wind.speed * 3.6).toFixed(2) + ` km/h</p>
+                             </div>
+                            <div class="item__right" style="max-width: 49%;width: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                                 <svg style="height: 60%; width: 60%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                                    <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+                                    <g><g><g id="Sunny"><g><path style="fill: #fff"  d="M500.8,217.2c-156.3,0-283.5,126.9-283.5,283c0,156,127.2,283,283.5,283c156.4,0,283.5-127,283.5-283C784.3,344.1,657.2,217.2,500.8,217.2z M500.8,736.1c-130.4,0-236.4-105.9-236.4-235.9c0-130.1,106-235.9,236.4-235.9c130.4,0,236.4,105.8,236.4,235.9C737.3,630.3,631.2,736.1,500.8,736.1z M116.2,476.7H34.4c-6.7,0-12.7,2.8-17,7.3c-4.6,4.3-7.4,10.3-7.4,17c0,13,10.5,23.5,23.6,23.5h81.8c6.6,0,12.6-2.8,16.9-7.2c4.6-4.3,7.5-10.4,7.5-17.1C139.8,487.2,129.2,476.7,116.2,476.7z M789.5,755c-9.2-9.2-24.1-9.2-33.3,0c-0.2,0.2-0.3,0.4-0.4,0.5c-0.1,0.1-0.3,0.2-0.4,0.3c-9.2,9.2-9.2,24.1,0,33.2l64.4,64.2c4.6,4.6,10.6,6.9,16.6,6.9c6,0,12.1-2.3,16.7-6.9c0.2-0.2,0.3-0.4,0.4-0.5c0.1-0.1,0.2-0.2,0.3-0.3c9.2-9.2,9.2-24.1,0-33.2L789.5,755z M825.2,144.4c-1.7,1-3.3,2.1-4.7,3.5l-64.4,64.3c-9.2,9.2-9.2,24.1,0,33.2c4.6,4.6,10.6,6.9,16.7,6.9c0,0,0,0,0,0c0,0,0,0,0,0c6,0,12-2.3,16.6-6.9l64.4-64.3c9.2-9.2,9.2-24.1,0-33.2C846.1,140.1,834.3,139,825.2,144.4z M228.9,748.1c-6,0-12.1,2.3-16.7,6.9l-64.4,64.3c-9.2,9.2-9.2,24,0,33.2c4.6,4.6,10.6,6.9,16.7,6.9c0,0,0,0,0,0c0,0,0,0,0,0c6,0,12-2.3,16.6-6.9l64.4-64.2c9.2-9.2,9.2-24.1,0-33.3C240.9,750.4,234.9,748.1,228.9,748.1z M211.4,246.2c4.6,4.6,10.6,6.9,16.7,6.9c6,0,12-2.3,16.7-6.9c0.1-0.1,0.2-0.2,0.3-0.4c0.2-0.2,0.3-0.2,0.5-0.4c9.2-9.2,9.2-24.1,0-33.2l-64.4-64.3c-9.2-9.2-24.1-9.2-33.3,0c-0.1,0.1-0.2,0.2-0.3,0.4c-0.2,0.1-0.3,0.2-0.5,0.4c-9.2,9.2-9.2,24.1,0,33.3L211.4,246.2z M500,861.3c-13,0-23.5,10.5-23.5,23.5l0,81.7c0,13,10.6,23.5,23.6,23.5c13,0,23.5-10.5,23.5-23.5l0-81.7C523.6,871.8,513,861.3,500,861.3z M500,140.6c10.1,0,18.7-6.4,22-15.3c1.5-3.1,2.4-6.5,2.4-10.1V33.5c0-13-10.5-23.5-23.6-23.5c-10.1,0-18.7,6.4-22,15.3c-1.5,3.1-2.4,6.5-2.4,10.1v81.7C476.5,130.1,487,140.6,500,140.6z M966.5,477.5l-81.9,0c-13,0-23.5,10.5-23.5,23.5c0,13,10.5,23.5,23.5,23.5h81.9c13,0,23.5-10.5,23.5-23.5C990,488,979.5,477.5,966.5,477.5z"/></g></g></g><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></g>
+                                 </svg>
+                                <p>` + data.weather[0].main + `</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        document.querySelector('body').appendChild(widget);
+        draw(document, widget);
+        document.getElementById('canvas').style.display = 'block';
+        spinner.style.display = 'none';
     });
 
-    var $snow = $(".flakes").find("svg");
-    $(".snow2").let_it_snow({
-        speed: 0,
-        interaction: true,
-        size: 6,
-        count: 50,
-        opacity: 0,
-        color: "#ffffff",
-        windPower: 0,
-        image: "https://3.bp.blogspot.com/-LWSCSuSZ9qw/VLkSYiICCUI/AAAAAAADaAs/Exw-xb0znkg/s1600/hf_shimmer_flake20.png"
-    });
-});
+function draw(d, widget) {
+    const width = 380;
+    const height = 280;
+    const fontSize = 16;
+    const canvas = d.getElementById("canvas");
+    const dom = widget;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#fff";
 
-// let it snow plugin from https://github.com/peachananr/let_it_snow
-!function (e) {
-    var t = {
-        speed: 0,
-        interaction: true,
-        size: 2,
-        count: 200,
-        opacity: 0,
-        color: "#ffffff",
-        windPower: 0,
-        image: false
-    };
-    e.fn.let_it_snow = function (n) {
-        function c() {
-            u.clearRect(0, 0, o.width, o.height);
-            for (var t = 0; t < a; t++) {
-                var n = s[t], i = f, p = l, d = 100, v = n.x, m = n.y;
-                var g = Math.sqrt((v - i) * (v - i) + (m - p) * (m - p)), y = v - i, b = m - p;
-                if (g < d) {
-                    var w = d / (g * g), E = (i - v) / g, S = (p - m) / g, x = w / 2;
-                    n.velX -= x * E;
-                    n.velY -= x * S
-                } else {
-                    n.velX *= .98;
-                    if (n.velY <= n.speed) {
-                        n.velY = n.speed
-                    }
-                    switch (r.windPower) {
-                        case false:
-                            n.velX += Math.cos(n.step += .05) * n.stepSize;
-                            break;
-                        case 0:
-                            n.velX += Math.cos(n.step += .05) * n.stepSize;
-                            break;
-                        default:
-                            n.velX += .01 + r.windPower / 100
-                    }
-                }
-                var T = r.color;
-                var N = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})$/;
-                var C = N.exec(T);
-                var k = parseInt(C[1], 16) + "," + parseInt(C[2], 16) + "," + parseInt(C[3], 16);
-                n.y += n.velY;
-                n.x += n.velX;
-                if (n.y >= o.height || n.y <= 0) {
-                    h(n)
-                }
-                if (n.x >= o.width || n.x <= 0) {
-                    h(n)
-                }
-                if (r.image == false) {
-                    u.fillStyle = "rgba(" + k + "," + n.opacity + ")";
-                    u.beginPath();
-                    u.arc(n.x, n.y, n.size, 0, Math.PI * 2);
-                    u.fill()
-                } else {
-                    u.drawImage(e("img#lis_flake").get(0), n.x, n.y, n.size * 2, n.size * 2)
-                }
-            }
-            requestAnimationFrame(c)
-        }
-
-        function h(e) {
-            if (r.windPower == false || r.windPower == 0) {
-                e.x = Math.floor(Math.random() * o.width);
-                e.y = 0
-            } else {
-                if (r.windPower > 0) {
-                    var t = Array(Math.floor(Math.random() * o.width), 0);
-                    var n = Array(0, Math.floor(Math.random() * o.height));
-                    var i = Array(t, n);
-                    var s = i[Math.floor(Math.random() * i.length)];
-                    e.x = s[0];
-                    e.y = s[1]
-                } else {
-                    var t = Array(Math.floor(Math.random() * o.width), 0);
-                    var n = Array(o.width, Math.floor(Math.random() * o.height));
-                    var i = Array(t, n);
-                    var s = i[Math.floor(Math.random() * i.length)];
-                    e.x = s[0];
-                    e.y = s[1]
-                }
-            }
-            e.size = Math.random() * 3 + r.size;
-            e.speed = Math.random() * 1 + r.speed;
-            e.velY = e.speed;
-            e.velX = 0;
-            e.opacity = Math.random() * .5 + r.opacity
-        }
-
-        function p() {
-            for (var e = 0; e < a; e++) {
-                var t = Math.floor(Math.random() * o.width), n = Math.floor(Math.random() * o.height),
-                    i = Math.random() * 3 + r.size, u = Math.random() * 1 + r.speed, f = Math.random() * .5 + r.opacity;
-                s.push({
-                    speed: u,
-                    velY: u,
-                    velX: 0,
-                    x: t,
-                    y: n,
-                    size: i,
-                    stepSize: Math.random() / 30,
-                    step: 0,
-                    angle: 180,
-                    opacity: f
-                })
-            }
-            c()
-        }
-
-        var r = e.extend({}, t, n), i = e(this), s = [], o = i.get(0), u = o.getContext("2d"), a = r.count, f = -100,
-            l = -100;
-        o.width = window.innerWidth;
-        o.height = window.innerHeight;
-        (function () {
-            var e = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function (e) {
-                window.setTimeout(e, 1e3 / 60)
-            };
-            window.requestAnimationFrame = e
-        })();
-        if (r.image != false) {
-            e("<img src='" + r.image + "' style='display: none' id='lis_flake'>").prependTo("body")
-        }
-        p();
-        e(window).resize(function () {
-            if (this.resizeTO) clearTimeout(this.resizeTO);
-            this.resizeTO = setTimeout(function () {
-                el2 = i.clone();
-                el2.insertAfter(i);
-                i.remove();
-                el2.let_it_snow(r)
-            }, 200)
-        });
-        if (r.interaction == true) {
-            o.addEventListener("mousemove", function (e) {
-                f = e.clientX, l = e.clientY
-            })
-        }
-    }
-}(window.jQuery)
+    const data =
+        "<svg xmlns='http://www.w3.org/2000/svg' width='" + width + "px' height='" + height + "px'>" +
+        "<foreignObject width='100%' height='100%'>" +
+        "<div xmlns='http://www.w3.org/1999/xhtml' style='font: " + fontSize + "px sans-serif; color: #fff;padding: 15px;'>" +
+        dom.innerHTML +
+        "</div>" +
+        "</foreignObject>" +
+        "</svg>";
+    const DOMURL = self.URL || self.webkitURL || self;
+    let img = new Image();
+    let svg = new Blob([data], {type: "image/svg+xml;charset=utf-8"});
+    const url = DOMURL.createObjectURL(svg);
+    img.addEventListener("load", function () {
+        DOMURL.revokeObjectURL(url);
+        ctx.drawImage(img, 0, 0);
+        dom.remove();
+    }, false);
+    img.src = url;
+    ctx.canvas.width = width;
+    ctx.canvas.height = height;
+}
